@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g8eT8KEph3rFtr+vELj2e/wPr8oHUp2DG0s9JhKHUd/NyNfLvc0PU8rfMFvuwwzCM5H795DHkYjBfXf9xOYHnA==",
+  "dgSpecHash": "JABgG4Ix2j+KXUkWhQEmrDf3OWCGCS6WeKObLLRBtPuUls/MCpbh1mngkwNsF25wu+oQJGuYvvVEXog5McAvYw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\OutlawAPI\\ProjectBackendDevelopment.csproj",
+  "projectFilePath": "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\outlawapi\\ProjectBackendDevelopment.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lenne\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\lenne\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
