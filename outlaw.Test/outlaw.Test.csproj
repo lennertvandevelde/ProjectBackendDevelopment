@@ -21,7 +21,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.4"/>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\outlawapi\ProjectBackendDevelopment.csproj"/>
+    <ProjectReference Include="..\outlawAPI\ProjectBackendDevelopment.csproj"/>
   </ItemGroup>
 
 

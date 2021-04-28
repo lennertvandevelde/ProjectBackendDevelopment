@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\OutlawAPI\\ProjectBackendDevelopment.csproj",
+  "FilePath": "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\Outlaw.API\\Outlaw.API.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15600,7 +15600,7 @@
     ],
     "CSharpLanguageVersion": 900
   },
-  "RootNamespace": "ProjectBackendDevelopment",
+  "RootNamespace": "Outlaw.API",
   "Documents": [],
   "SerializationFormat": "0.2"
 }
