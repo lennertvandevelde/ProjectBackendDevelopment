@@ -6016,11 +6016,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\ProjectBackendDevelopment.csproj",
+      "projectUniqueName": "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\OutlawAPI\\ProjectBackendDevelopment.csproj",
       "projectName": "ProjectBackendDevelopment",
-      "projectPath": "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\ProjectBackendDevelopment.csproj",
+      "projectPath": "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\OutlawAPI\\ProjectBackendDevelopment.csproj",
       "packagesPath": "C:\\Users\\lenne\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\obj\\",
+      "outputPath": "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\OutlawAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lenne\\AppData\\Roaming\\NuGet\\NuGet.Config"

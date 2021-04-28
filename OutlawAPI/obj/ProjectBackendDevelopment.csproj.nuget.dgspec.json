@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\ProjectBackendDevelopment.csproj": {}
+    "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\OutlawAPI\\ProjectBackendDevelopment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\ProjectBackendDevelopment.csproj": {
+    "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\OutlawAPI\\ProjectBackendDevelopment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\ProjectBackendDevelopment.csproj",
+        "projectUniqueName": "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\OutlawAPI\\ProjectBackendDevelopment.csproj",
         "projectName": "ProjectBackendDevelopment",
-        "projectPath": "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\ProjectBackendDevelopment.csproj",
+        "projectPath": "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\OutlawAPI\\ProjectBackendDevelopment.csproj",
         "packagesPath": "C:\\Users\\lenne\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\obj\\",
+        "outputPath": "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\OutlawAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lenne\\AppData\\Roaming\\NuGet\\NuGet.Config"

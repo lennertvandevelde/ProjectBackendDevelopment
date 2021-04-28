@@ -27,10 +27,22 @@ namespace ProjectBackendDevelopment.Controllers
             return await _outlawService.GetDeathCauses();
         }
 
+        [Route("gangs")]
+        [HttpGet]
+        public async Task<ActionResult<List<Gang>>> GetGangsAsync(){
+            return await _outlawService.GetGangs();
+        }
+
         [HttpGet]
         [Route("outlaws")]
         public async Task<ActionResult<List<Outlaw>>> GetOutlawsAsync(){
-            return await _outlawService.GetOutlaws();
+            try {
+                return await _outlawService.GetOutlaws();
+            }
+            catch(Exception e) {
+                return new StatusCodeResult(500);
+            }
+            
         }
 
         [Route("outlaw")]
