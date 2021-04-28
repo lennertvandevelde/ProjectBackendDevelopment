@@ -13,7 +13,7 @@ services:
     volumes: 
         - C:\db\data:/var/opt/mssql/data
   api:
-    image: registrationapi
+    image: outlawapi
     build:
       context: .
       dockerfile: ./Dockerfile

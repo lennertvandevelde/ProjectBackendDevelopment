@@ -11,6 +11,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ProjectBackendDevelopment.Configuration;
+using ProjectBackendDevelopment.Data;
+using ProjectBackendDevelopment.Repositories;
+using ProjectBackendDevelopment.Services;
 
 namespace ProjectBackendDevelopment
 {
@@ -26,8 +30,21 @@ namespace ProjectBackendDevelopment
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
+            
+            services.Configure<ConnectionStrings>(Configuration.GetSection("ConnectionStrings"));
+            services.AddDbContext<OutlawContext>();
 
             services.AddControllers();
+
+            services.AddTransient<IOutlawContext, OutlawContext>();
+
+            services.AddTransient<IDeathCauseRepository, DeathCauseRepository>();
+            services.AddTransient<IOutlawRepository, OutlawRepository>();
+            services.AddTransient<IGangRepository, GangRepository>();
+
+            services.AddTransient<IOutlawService, OutlawService>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProjectBackendDevelopment", Version = "v1" });
