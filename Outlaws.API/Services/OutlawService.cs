@@ -14,7 +14,9 @@ namespace Outlaws.API.Services
         Task<Outlaw> AddOutlawWithUri(string uri);
         Task<List<DeathCause>> GetDeathCauses();
         Task<List<Gang>> GetGangs();
+        Task<Outlaw> GetOutlaw(Guid outlawid);
         Task<List<Outlaw>> GetOutlaws();
+        Task<Outlaw> UpdateOutlaw(OutlawUpdateDTO updateoutlaw);
     }
 
     public class OutlawService : IOutlawService
@@ -39,6 +41,10 @@ namespace Outlaws.API.Services
         public async Task<List<Outlaw>> GetOutlaws()
         {
             return await _outlawRepository.GetOutlaws();
+        }
+        public async Task<Outlaw> GetOutlaw(Guid outlawid)
+        {
+            return await _outlawRepository.GetOutlaw(outlawid);
         }
         public async Task<List<DeathCause>> GetDeathCauses()
         {
@@ -87,5 +93,32 @@ namespace Outlaws.API.Services
             }
         }
 
+        public async Task<Outlaw> UpdateOutlaw(OutlawUpdateDTO updateoutlaw)
+        {
+            try
+            {
+                Outlaw outlaw = await _outlawRepository.GetOutlaw(updateoutlaw.OutlawId);
+                outlaw.GangOutlaws = new List<GangOutlaw>();
+                if (updateoutlaw.Gangs != null)
+                {
+                    foreach (var GangId in updateoutlaw.Gangs)
+                    {
+                        outlaw.GangOutlaws.Add(new GangOutlaw() { GangId = GangId });
+                    }
+                }
+                if (updateoutlaw.DeathCauseId != null)
+                {
+                    outlaw.DeathCauseId = updateoutlaw.DeathCauseId[0];
+                }
+
+
+                await _outlawRepository.UpdateOutlaw(outlaw);
+                return outlaw;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

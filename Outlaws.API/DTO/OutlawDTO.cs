@@ -5,6 +5,13 @@ using Outlaws.API.Models;
 
 namespace Outlaws.API.DTO
 {
+    public class OutlawUpdateDTO{
+        public Guid OutlawId { get; set; }
+        public List<Guid> DeathCauseId { get; set; }
+        public List<Guid> Gangs { get; set; }
+
+
+    }
     public class OutlawDTO
     {
         public Guid OutlawId { get; set; }

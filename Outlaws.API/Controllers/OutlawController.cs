@@ -45,6 +45,17 @@ namespace Outlaws.API.Controllers
             }
             
         }
+        [HttpGet]
+        [Route("outlaw/{outlawid}")]
+        public async Task<ActionResult<Outlaw>> GetOutlawAsync(Guid outlawid){
+            try {
+                return await _outlawService.GetOutlaw(outlawid);
+            }
+            catch(Exception e) {
+                throw new ArgumentException(e.Message);
+            }
+            
+        }
 
         [Route("outlaw")]
         [HttpPost]
@@ -60,6 +71,7 @@ namespace Outlaws.API.Controllers
         }
         [Route("outlawuri")]
         [HttpPost]
+        
         public async Task<ActionResult<Outlaw>> AddOutlawWithUriAsync(string uri){
             try {
                 return new OkObjectResult(await _outlawService.AddOutlawWithUri(uri));
@@ -70,5 +82,18 @@ namespace Outlaws.API.Controllers
             }
            
         }
+        [Route("outlaw")]
+        [HttpPut]
+        public async Task<ActionResult<Outlaw>> UpdateOutlawAsync(OutlawUpdateDTO updateoutlaw){
+            try {
+                return new OkObjectResult(await _outlawService.UpdateOutlaw(updateoutlaw));
+
+            }
+            catch(Exception ex){
+                throw new ArgumentException(ex.Message);
+            }
+           
+        }
+    
     }
 }
