@@ -57,5 +57,17 @@ namespace Outlaws.API.Controllers
             }
            
         }
+        [Route("outlawuri")]
+        [HttpPost]
+        public async Task<ActionResult<Outlaw>> AddOutlawWithUriAsync(string uri){
+            try {
+                return new OkObjectResult(await _outlawService.AddOutlawWithUri(uri));
+
+            }
+            catch(Exception ex){
+                return new StatusCodeResult(500);
+            }
+           
+        }
     }
 }

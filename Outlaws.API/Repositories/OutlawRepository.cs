@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Outlaws.API.Data;
@@ -7,6 +8,7 @@ using Outlaws.API.Models;
 
 namespace Outlaws.API.Repositories
 {
+    
     public interface IOutlawRepository
     {
         Task<Outlaw> AddOutlaw(Outlaw outlaw);
@@ -15,6 +17,7 @@ namespace Outlaws.API.Repositories
 
     public class OutlawRepository : IOutlawRepository
     {
+        public HttpClient Client { get; set; }
         private IOutlawContext _context;
         public OutlawRepository(IOutlawContext context)
         {

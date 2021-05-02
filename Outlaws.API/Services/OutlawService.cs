@@ -11,6 +11,7 @@ namespace Outlaws.API.Services
     public interface IOutlawService
     {
         Task<OutlawDTO> AddOutlaw(OutlawDTO outlaw);
+        Task<Outlaw> AddOutlawWithUri(string uri);
         Task<List<DeathCause>> GetDeathCauses();
         Task<List<Gang>> GetGangs();
         Task<List<Outlaw>> GetOutlaws();
@@ -22,16 +23,18 @@ namespace Outlaws.API.Services
         private IOutlawRepository _outlawRepository;
         private IGangRepository _gangRepository;
         private IMapper _mapper;
+        private ISPARQLService _sparqlService;
         public OutlawService(IDeathCauseRepository deathCauseRepository,
             IOutlawRepository outlawRepository,
             IGangRepository gangRepository,
-            IMapper mapper
+            IMapper mapper, ISPARQLService sparqlService
         )
         {
             _mapper = mapper;
             _deathCauseRepository = deathCauseRepository;
             _outlawRepository = outlawRepository;
             _gangRepository = gangRepository;
+            _sparqlService = sparqlService;
         }
         public async Task<List<Outlaw>> GetOutlaws()
         {
@@ -52,14 +55,30 @@ namespace Outlaws.API.Services
             {
                 Outlaw newOutlaw = _mapper.Map<Outlaw>(outlaw);
                 newOutlaw.GangOutlaws = new List<GangOutlaw>();
-                if(outlaw.Gangs != null){
-                    foreach (var GangId in outlaw.Gangs)
+                if (outlaw.Gangs != null)
                 {
-                    newOutlaw.GangOutlaws.Add(new GangOutlaw() { GangId = GangId });
+                    foreach (var GangId in outlaw.Gangs)
+                    {
+                        newOutlaw.GangOutlaws.Add(new GangOutlaw() { GangId = GangId });
+                    }
                 }
-                }
-                
+
                 await _outlawRepository.AddOutlaw(newOutlaw);
+                return outlaw;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public async Task<Outlaw> AddOutlawWithUri(string uri)
+        {
+            try
+            {
+                Outlaw outlaw = await _sparqlService.GetOutlaw(uri);
+
+                await _outlawRepository.AddOutlaw(outlaw);
                 return outlaw;
             }
             catch (Exception e)

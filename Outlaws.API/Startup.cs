@@ -43,7 +43,10 @@ namespace Outlaws.API
             services.AddTransient<IOutlawRepository, OutlawRepository>();
             services.AddTransient<IGangRepository, GangRepository>();
 
+            services.AddTransient<ISPARQLService, SPARQLService>();
             services.AddTransient<IOutlawService, OutlawService>();
+
+
 
             services.AddSwaggerGen(c =>
             {

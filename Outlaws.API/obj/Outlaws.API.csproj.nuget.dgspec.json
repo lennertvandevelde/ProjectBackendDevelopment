@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\Outlaws.API\\Outlaws.API.csproj": {}
+    "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\Outlaws.API\\Outlaws.API.csproj": {}
   },
   "projects": {
-    "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\Outlaws.API\\Outlaws.API.csproj": {
+    "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\Outlaws.API\\Outlaws.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\Outlaws.API\\Outlaws.API.csproj",
+        "projectUniqueName": "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\Outlaws.API\\Outlaws.API.csproj",
         "projectName": "Outlaws.API",
-        "projectPath": "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\Outlaws.API\\Outlaws.API.csproj",
+        "projectPath": "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\Outlaws.API\\Outlaws.API.csproj",
         "packagesPath": "C:\\Users\\lenne\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\Outlaws.API\\obj\\",
+        "outputPath": "C:\\Users\\lenne\\Documents\\BackendDevelopment\\ProjectBackendDevelopment\\Outlaws.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lenne\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -59,6 +59,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
             }
           },
           "imports": [
