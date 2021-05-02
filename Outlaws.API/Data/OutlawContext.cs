@@ -40,6 +40,9 @@ namespace Outlaws.API.Data
                  DeathCauseId = Guid.NewGuid(), Description = "Gunshot wound", 
                  DeathUri = "http://dbpedia.org/resource/Gunshot_wounds" 
                  });
+            modelBuilder.Entity<DeathCause>().HasData(new DeathCause() {
+                 DeathCauseId = Guid.NewGuid(), Description = "None" 
+                 });
                  
             modelBuilder.Entity<Gang>().HasData(new Gang() {
                  GangId = Guid.NewGuid(), GangName = "Butch Cassidy's Wild Bunch", 

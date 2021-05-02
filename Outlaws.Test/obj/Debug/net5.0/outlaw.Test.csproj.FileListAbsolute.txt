@@ -851,3 +851,5 @@ C:\Users\lenne\Documents\BackendDevelopment\ProjectBackendDevelopment\Outlaws.Te
 C:\Users\lenne\Documents\BackendDevelopment\ProjectBackendDevelopment\Outlaws.Test\obj\Debug\net5.0\outlaw.Test.csproj.CopyComplete
 C:\Users\lenne\Documents\BackendDevelopment\ProjectBackendDevelopment\Outlaws.Test\obj\Debug\net5.0\outlaw.Test.genruntimeconfig.cache
 C:\Users\lenne\Documents\BackendDevelopment\ProjectBackendDevelopment\Outlaws.Test\bin\Debug\net5.0\CoverletSourceRootsMapping
+C:\Users\lenne\Documents\BackendDevelopment\ProjectBackendDevelopment\Outlaws.Test\bin\Debug\net5.0\RestSharp.dll
+C:\Users\lenne\Documents\BackendDevelopment\ProjectBackendDevelopment\Outlaws.Test\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

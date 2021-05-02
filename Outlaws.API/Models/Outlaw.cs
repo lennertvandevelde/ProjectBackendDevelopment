@@ -14,7 +14,8 @@ namespace Outlaws.API.Models
         public string Name { get; set; }
         public string BirthDate { get; set; }
         public string DeathDate { get; set; }
-        [JsonIgnore]
+        // [JsonIgnore]
+        
         public Guid DeathCauseId { get; set; }
         public DeathCause DeathCause { get; set; }
         public List<GangOutlaw> GangOutlaws { get; set; }

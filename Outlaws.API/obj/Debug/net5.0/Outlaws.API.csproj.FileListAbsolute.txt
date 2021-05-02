@@ -62,3 +62,5 @@ C:\Users\lenne\Documents\BackendDevelopment\ProjectBackendDevelopment\Outlaws.AP
 C:\Users\lenne\Documents\BackendDevelopment\ProjectBackendDevelopment\Outlaws.API\obj\Debug\net5.0\ref\Outlaws.API.dll
 C:\Users\lenne\Documents\BackendDevelopment\ProjectBackendDevelopment\Outlaws.API\obj\Debug\net5.0\Outlaws.API.pdb
 C:\Users\lenne\Documents\BackendDevelopment\ProjectBackendDevelopment\Outlaws.API\obj\Debug\net5.0\Outlaws.API.genruntimeconfig.cache
+C:\Users\lenne\Documents\BackendDevelopment\ProjectBackendDevelopment\Outlaws.API\bin\Debug\net5.0\RestSharp.dll
+C:\Users\lenne\Documents\BackendDevelopment\ProjectBackendDevelopment\Outlaws.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using Outlaws.API.Models;
 using Outlaws.API.DTO;
 using System.Text;
+using System.Net.Http.Headers;
+using RestSharp;
 
 namespace outlaw.Test
 {
@@ -19,6 +21,13 @@ namespace outlaw.Test
         public OutlawControllerTest(WebApplicationFactory<Outlaws.API.Startup> fixture)
         {
             Client = fixture.CreateClient();
+            var client = new RestClient("https://dev-xpm56lsq.eu.auth0.com/oauth/token");
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("content-type", "application/json");
+            request.AddParameter("application/json", "{\"client_id\":\"MPOn4zJqPgcY2hP8usfmfTtbEAUBxSlR\",\"client_secret\":\"OMRGvMguKdj1Bzw1_JMNLGFn5HDDWDO5ucmqRQrz3RuO1gPocIIrl4ORHmUVwRXW\",\"audience\":\"https:/outlaw\",\"grant_type\":\"client_credentials\"}", ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+            var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(response.Content);
+            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", $"{values["access_token"]}");
         }
         [Fact]
         public async Task Get_DeathCauses_Should_Return_Ok()
@@ -53,7 +62,7 @@ namespace outlaw.Test
                 Name =  "Henry Newton Brown",
                 BirthDate =  null,
                 DeathDate =  "1884-04-30",
-                DeathCauseId =  Guid.Parse("0536a2ac-0c95-4479-b883-db4bba5bdcff"),
+                DeathCauseId =  Guid.Parse("b82f1cde-d0bc-46f8-bf90-f8092349a861"),
                 Gangs =  null,
                 Description =  "Henry Newton Brown (1857 – April 30, 1884) was an American Old West gunman who played the roles of both lawman and outlaw during his life. Brown was raised in Cold Springs Township, in Phelps County, ten miles south of Rolla, Missouri. An orphan, he lived there with his uncle Jasper and aunt Aldamira Richardson until the age of seventeen, when he left home and headed west. He drifted through various cowboy jobs in Colorado and Texas, supposedly killing a man in a gunfight in the Texas Panhandle."
             };
@@ -65,6 +74,19 @@ namespace outlaw.Test
             var createdOutlaw = JsonConvert.DeserializeObject<OutlawDTO>(await response.Content.ReadAsStringAsync());
             Assert.NotNull(createdOutlaw);
             Assert.Equal<string>("Henry Newton Brown", createdOutlaw.Name);
+        }
+
+        [Fact]
+        public async Task Add_Outlaw_Uri(){
+
+            string uri = "http://dbpedia.org/resource/Jesse_James";
+
+            var response = await Client.PostAsync($"/outlawuri?uri=http://dbpedia.org/resource/Barack_Obama", null);
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+
+            var createdOutlaw = JsonConvert.DeserializeObject<Outlaw>(await response.Content.ReadAsStringAsync());
+            Assert.NotNull(createdOutlaw);
+            Assert.Equal<string>("Barack Obama", createdOutlaw.Name);
         }
     }
 }

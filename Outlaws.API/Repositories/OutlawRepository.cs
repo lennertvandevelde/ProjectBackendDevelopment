@@ -30,9 +30,13 @@ namespace Outlaws.API.Repositories
 
         public async Task<Outlaw> AddOutlaw(Outlaw outlaw)
         {
-            await _context.Outlaws.AddAsync(outlaw);
+            try
+            {await _context.Outlaws.AddAsync(outlaw);
             await _context.SaveChangesAsync();
-            return outlaw;
+            return outlaw;}
+            catch (Exception e){
+                throw e;
+            }
 
         }
     }

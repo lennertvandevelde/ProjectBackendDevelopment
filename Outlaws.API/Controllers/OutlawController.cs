@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Outlaws.API.Data;
@@ -10,7 +11,7 @@ using Outlaws.API.Services;
 
 namespace Outlaws.API.Controllers
 {
-    
+    [Authorize]
     [ApiController]
     public class OutlawController :ControllerBase
     {
@@ -40,7 +41,7 @@ namespace Outlaws.API.Controllers
                 return await _outlawService.GetOutlaws();
             }
             catch(Exception e) {
-                return new StatusCodeResult(500);
+                throw new ArgumentException(e.Message);
             }
             
         }
@@ -53,7 +54,7 @@ namespace Outlaws.API.Controllers
 
             }
             catch(Exception ex){
-                return new StatusCodeResult(500);
+                throw new ArgumentException(ex.Message);
             }
            
         }
@@ -65,7 +66,7 @@ namespace Outlaws.API.Controllers
 
             }
             catch(Exception ex){
-                return new StatusCodeResult(500);
+                throw new ArgumentException(ex.Message);
             }
            
         }

@@ -14,6 +14,7 @@ namespace Outlaws.API.DTO
         public string Name { get; set; }
         public string BirthDate { get; set; }
         public string DeathDate { get; set; }
+        
         public Guid DeathCauseId { get; set; }
         public List<Guid> Gangs { get; set; }
 
